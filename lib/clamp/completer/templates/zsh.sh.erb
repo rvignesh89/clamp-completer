@@ -20,7 +20,7 @@ _<%= invocation_path.join('_').gsub("-","_") %>() {
   local ret=1
 
   _arguments -C : \
-    '1:subcommands:_<%= invocation_path.join('_') %>_subcommands' \
+    '1:subcommands:_<%= invocation_path.join('_').gsub("-","_") %>_subcommands' \
     <%- command_class.recognised_options.each do |opt| -%>
       <%- if opt.type == :flag -%>
         <%- if opt.long_switch.include?('[no-]') -%>
